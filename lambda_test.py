@@ -23,9 +23,6 @@ def lambda_handler(event, context):
             table.put_item(
                 Item=clean_data
             )
-            return {
-                'id_str': item.get('id_str'),
-                'text': item.get('text'),
-            }
         except:
-            return 'Lambda failed'
+            pass
+    return 'Lambda Finished'
